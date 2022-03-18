@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="money-box-container">
+        <div class="box info-box bet-box">
+            <p class="info-box-header">Current bet</p>
+            <div class="money-display">
+                <div class="text-highlight"></div>
+                <p id="current-bet" class="money-text"></p>
+            </div>
+        </div> 
+        <div class="box info-box current-money-box"> 
+            <p class="info-box-header">Total cash</p>
+            <p class="money-popup-positive invisible">+100 €</p>
+            <div class="money-display">
+                <div class="text-highlight"></div>
+                <p id="current-money" class="money-text">1000 €</p>
+            </div>
+            <p class="money-popup-negative invisible">-100 €</p>
+        </div>
+        <div class="box info-box bet-box">
+            <p class="info-box-header">Next bet</p>
+            <div>
+                <input id="next-bet-input" value="100" type="text" class="next-bet-input money-text">
+                <span class="money-text"> €</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hand-container">
+        <div class="box info-box score-box">
+            <p class="info-box-header">Dealer</p>
+            <div class="score-display">
+                <div class="text-highlight"></div>
+                <div class="text-highlight negative-color invisible smooth-transition-opacity" id="dealer-score-highlight-bust"></div>
+                <div class="text-highlight blackjack-color invisible smooth-transition-opacity" id="dealer-score-highlight-blackjack"></div>
+                <p class="score-text" id="dealer-score"></p>
+            </div>
+        </div>
+        <div id="dealer-hand" class="hand"></div>
+        <div class="box invisible smooth-transition-opacity" id="dealer-status-box">
+            <p class="status-text" id="dealer-status-text"></p>
+        </div>    
+    </div>
+    
+    <div class="hand-container">
+        <div class="box info-box score-box">
+            <p class="info-box-header">Player</p>
+            <div class="score-display">
+                <div class="text-highlight"></div>
+                <div class="text-highlight negative-color invisible smooth-transition-opacity" id="player-score-highlight-bust"></div>
+                <div class="text-highlight blackjack-color invisible smooth-transition-opacity" id="player-score-highlight-blackjack"></div>
+                <p class="score-text" id="player-score"></p>
+            </div>
+        </div>
+        <div id="player-hand" class="hand"></div>
+        <div class="box invisible smooth-transition-opacity" id="player-status-box">
+            <p class="status-text" id="player-status-text"></p>
+        </div> 
+    </div>
+   
+    <div class="box result-box invisible smooth-transition-opacity">
+        <h2 class="result-text"></h2>
+    </div>
+
+    <div class="insurance-container" id="insuranceAlert">
+        <div class="box invisible smooth-transition-opacity" id="insurance-box">
+            <p class="insurance-text"></p>
+        </div>
+    </div>
+
+    <div class="action-button-container">
+        <button id="deal" onclick="deal()" type="button">Deal</button>
+        <button id="hit" onclick="hit()" type="button" disabled>Hit</button>
+        <button id="stand" onclick="dealerTurn()" type="button" disabled>Stand</button>
+        <button id="double-down" onclick="doubleDown()" type="button" disabled>Double Down</button>
+    </div>
+
+    <div class="modal">
+        <div class="box modal-box">
+            <p class="modal-text"></p>
+            <div class="modal-button-container">
+                <button class="modal-button" id="cancel-button">No</button>
+                <button class="modal-button" id="accept-button">Yes</button>
+                <button class="modal-button" id="ok-button" onclick="disableModal()">Ok</button>
+            </div>
+        </div>
+    </div> 
+    
+    
+</body>
+</html>

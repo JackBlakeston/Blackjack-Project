@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* GENERAL */
+
+body {
+    background: url('../resources/images/table.png') no-repeat center center fixed; ;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: ivory;
+}
+
+p {
+    margin: unset;
+}
+
+
+/* BUTTONS */
+
+button {
+    height: 50px;
+    min-width: 190px;
+    border-radius: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 110%;
+    box-shadow: 6px 6px 13px rgb(4 27 5 / 50%), 10px 10px 25px rgb(0 26 0 / 67%), inset 0px -3px 0px 0px rgb(58 57 0 / 50%);     
+    background: linear-gradient(147deg, #ffe774 0%, #ffd300 31%, #d6c102 81%);
+    border: 1px solid #000000;
+    transition: 0.4s;
+}
+
+button:hover:enabled {
+    box-shadow: 6px 6px 13px rgba(4, 27, 5 / 60%), 10px 10px 25px rgba(0, 26, 0, 67%), inset 0px -3px 0px 0px rgb(58 57 0 / 50%); 
+    transform: scale(1.1);
+    background: linear-gradient(147deg, #fdea8a 0%, #ffd70f 31%, #d6c100 81%); 
+}
+
+button:disabled {
+    background: linear-gradient(147deg, #ffe8747e 0%, #ffd5007e 31%, #bba8007e 81%);
+    color: #1d1d1dbd;
+    box-shadow: 6px 6px 13px rgb(4 27 5 / 30%), 10px 10px 25px rgb(0 26 0 / 40%), inset 0px -3px 0px 0px rgb(58 57 0 / 50%);
+    cursor: auto;
+}
+
+
+/* ALL BOXES */
+
+.box {
+    border-radius: 10px;
+    background: linear-gradient(147deg, #3c393f 0%, #0c0c0c 74%);
+    box-shadow: 6px 6px 13px rgb(4 27 5 / 50%), 10px 10px 25px rgb(0 26 0 / 67%), inset 0px 0px 0px 1px rgb(0 0 0 / 20%), inset 0px -5px 0px 0px rgb(0 0 0 / 30%), inset 0px 2px 0px 0px rgb(31 71 36 / 36%);    
+    text-align: center;
+    font-size: 21px;
+}
+
+
+/* ALL THE PERMANENT INFORMATION DISPLAY BOXES */
+
+.info-box { 
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    opacity: 0.9;
+}
+
+.info-box-header {
+    border-bottom: 0.5px solid #747474;
+}
+
+.text-highlight {
+    background: linear-gradient(100deg, #9e9d9d 0%, #7c7c7c 60%, #3b3b3b 100%);
+    box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.5), inset 10px 10px 16px rgba(29, 28, 28, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.3;
+    border: 1px solid #ffffff85;
+    box-sizing: border-box;
+}
+
+
+/* MONEY BOXES */
+
+.money-box-container {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    margin-bottom: 20px;
+    height: 112px;
+}
+
+.bet-box { 
+    width: 150px;
+    margin: 0 55px;
+    gap: 24px;
+}
+
+.current-money-box {
+    width: 260px;
+}
+
+.money-display { 
+    position: relative;
+    margin: 0 20px;
+    height: 29px;
+}
+
+.money-text { 
+    font-size: 25px;
+}
+
+.money-popup-positive { 
+    color:rgb(100, 158, 42); 
+}
+
+.money-popup-negative {
+    color:rgb(231, 86, 86);
+    margin-left: 4px;
+}
+
+.next-bet-input { 
+    width: 90px;
+    margin: 0 4px 0 10px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #5f5f5f 0%, #3b3b3b 60%, #1f1f1f 100%);
+    box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.5), inset 10px 10px 16px rgba(29, 28, 28, 0.5);
+    text-align: center;
+    padding: unset;
+    border: 1px solid #ffffff29;
+    color: ivory;
+    height: 29px;
+    box-sizing: border-box;
+}
+
+
+/* HAND CONTAINER -- Holds scoreboards, hands, and status boxes */
+
+.hand-container {
+    display: flex;
+    align-items: center;
+    height: 209px;
+    border-top: 0.1px solid #1b6535;
+}
+
+
+/* SCORE BOXES */
+
+.score-box {
+    height: 140px;
+    margin: 0 200px 0 80px;
+    gap: 16px;
+}
+
+.score-display {
+    position: relative;
+    margin: 0 30px;
+    height: 70px;
+    width: 100px;
+}
+
+.score-text { 
+    font-size: 295%;
+}
+
+
+/* HANDS AND CARDS */
+
+.hand { 
+    min-height: 198px;
+    display: flex;
+    margin-right: 30px;
+}
+
+.card {
+    height: 185px;
+    margin: 10px 0 14px -60px;
+}
+
+.card:first-child {
+    margin-left: unset;
+}
+
+.card-flipped-container {
+    transition: transform 0.8s; 
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-flipped-front {
+    transform: rotateY(180deg); 
+    height:185px; 
+    backface-visibility: hidden;
+}
+
+.card-flipped-back {
+    position: absolute;
+    left: 0; 
+    height:185px;
+    backface-visibility: hidden;
+}
+
+
+/* HAND STATUS MESSAGES */
+
+.status-text { 
+    margin: 12px 20px;
+}
+
+
+/* RESULT */
+
+.result-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.result-text { 
+    min-height: 37px;
+    margin: 5px 0;
+}
+
+
+/* ACTION BUTTONS */
+
+.action-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+/* MODAL */
+
+.modal {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-box {
+    width: 430px;
+    height: 170px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.97;
+}
+
+.modal-text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    border-bottom: 1px solid #e0e0e0a9;
+    padding-bottom: 20px;
+    margin-top: unset;
+}
+
+.modal-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 25%;
+}
+
+.modal-button {
+   font-size: 80%; 
+    min-width: 140px;
+    display: none;
+}
+
+
+/* INSURANCE */
+
+.insurance-container {
+    display: flex;
+    justify-content: center;
+    min-height: 54px;
+    margin: 35px 0 40px 0;
+}
+
+.insurance-text {
+    margin: 15px 20px;
+}
+
+
+/* HIDE-SHOW ELEMENTS */
+
+.invisible {
+    opacity: 0;
+}
+
+.visible { 
+    opacity: 0.85;
+}
+
+.smooth-transition-opacity {
+    transition: opacity 1s;
+}
+
+
+/* ASSIGN COLORS TO ELEMENTS */
+
+.neutral-color {
+    background: linear-gradient(147deg, #252525 0%, #0a0a0a 64%);
+}
+
+.positive-color { 
+    background: linear-gradient(147deg, #1fab1e 0%, #174c00 64%);
+}
+
+.negative-color { 
+    background: linear-gradient(147deg, #ab1e1e 0%, #4c0000 70%);
+}
+
+.blackjack-color { 
+    background-image: linear-gradient(147deg, #1e5397 0%, #000040 74%);
+}
+
+
+/* ANIMATIONS */
+
+.money-popup-animation { 
+    animation: fade-in-out 4s forwards;
+}
+
+@keyframes fade-in-out { 
+    0% {opacity: 0; }
+    30% {opacity: 1; }
+    70% {opacity: 1; }
+    100% {opacity: 0; }
+}
+
+.card-move-animation { 
+    animation: card-move 0.9s forwards;
+}
+
+@keyframes card-move {
+    0% { transform: translate(400px, -500px); opacity: 1; }
+    100% { transform: unset; opacity: 1; } 
+}
+
+.card-flip-animation { 
+    transform: rotateY(180deg); 
+}
+
+.modal-fade-in-animation { 
+    animation: fade-in 0.8s forwards;
+    display: flex;
+}
+
+.modal-button-fade-in-animation { 
+    animation: fade-in 1.2s forwards;
+}
+
+@keyframes fade-in { 
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.modal-box-grow-animation { 
+    animation: grow-height 0.8s forwards;
+}
+
+@keyframes grow-height {
+    0% { height: 0; }
+  100% { height: 170px; }
+}
